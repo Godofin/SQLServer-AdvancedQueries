@@ -19,3 +19,13 @@ select * from produto where not(SABOR = 'manga' or TAMANHO = '700 ml')
 select * from produto where not(SABOR = 'manga' and TAMANHO = '700 ml')
 select * from produto where SABOR in ('Manga', 'Laranja') -- Same thins this: select * from produto where sabor='manga' or sabor='laranja'
 select * from produto where SABOR = 'manga' or PRECO_LISTA BETWEEN 4 and 10
+
+-- Using Like
+-- Used to filter a character or any generical data
+-- Example: select * from table where camp like '<condition>'
+
+ select * from cliente where nome like '%Carvalho'
+ select * from produto where nome like '%litros%' --Has litros in beetwen the name
+ select * from produto where nome like '%litros' -- Start with litros
+ select * from produto where nome like 'litros%' -- End with litros
+ select * from produto where nome like '%litros%' and SABOR = 'Laranja' 
